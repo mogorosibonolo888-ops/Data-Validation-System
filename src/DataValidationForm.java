@@ -90,15 +90,23 @@ public class DataValidationForm extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(200, 189, 180));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("CLEAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(58, 53, 50));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("EXIT");
 
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Female");
 
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Male");
 
+        buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("Other");
 
         txtname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 208, 200)));
@@ -278,6 +286,18 @@ if (ageNumber < 1 || ageNumber > 120) {
             } 
     
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+ // Clear all text fields
+txtname.setText("");
+txtid.setText("");
+txtage.setText("");
+txtcontact.setText("");
+txtemail.setText("");
+
+// Clear gender selection
+buttonGroup1.clearSelection();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
